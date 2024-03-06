@@ -1,0 +1,7 @@
+[
+    {"ID": 1, "Nimi": "Esko Mäkinen", "Osoite": "Koivukatu 27", "Postinumero": "24680"},
+    {"ID": 2, "Nimi": "Matti Jokinen", "Osoite": "Puistokuja 2", "Postinumero": "64850"},
+    {"ID": 3, "Nimi": "Miro Koivula", "Osoite": "Lahtisenkatu 10", "Postinumero": "26700"},
+    {"ID": 4, "Nimi": "Jaakko Ylitalo", "Osoite": "Jokitie 1", "Postinumero": "96840"},
+    {"ID": 5, "Nimi": "Päivi Suontausta", "Osoite": "Tammihaka 45", "Postinumero": "01870"}
+]
