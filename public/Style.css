@@ -1,0 +1,10 @@
+button {
+    background-color: white;
+    font-family: "Georgia", serif, serif;
+    font-size: 100%;
+
+}
+
+button:hover {
+    background-color: mediumaquamarine; /* Muuta taustaväriä, kun hiiri on päällä */
+}

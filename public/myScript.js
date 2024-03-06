@@ -1,25 +1,118 @@
+// Suoritetaan etusivu-funktio kun sivu on ladattu
+window.onload = function() {
+    etuSivu();
+};
+
+//---------------------------------------  TUMMA/VAALEA TEEMA  ----------------------------------------------------//
+
+let theme = "light" // Oletus vaalea teema
 
 
-
-
-function etuSivu() {
-    document.getElementById("mainArea").innerHTML = "Tämä on pääsivu.";
+function darkTheme() {
+        
+    theme = "dark"
+    document.getElementById("all").style.backgroundColor = "black"
+    document.getElementsByTagName("h1")[0].style.color = "silver"
+    document.getElementsByTagName("p")[0].style.color = "silver"
 }
+
+function lightTheme() {
+
+    theme = "light"
+    document.getElementById("all").style.backgroundColor = "white"
+    document.getElementsByTagName("h1")[0].style.color = "black"
+    document.getElementsByTagName("p")[0].style.color = "black"
+}
+
+//---------------------------------------  ETUSIVU  ----------------------------------------------------//
+function etuSivu() {
+    var mainArea = document.getElementById("mainArea");
+    mainArea.innerHTML = ""; // Tyhjennetään mainArea sisällöstä
+
+
+    // Lisätään otsikko
+    var otsikko = document.createElement("h1");
+    otsikko.textContent = "Tervetuloa Kukkamestareiden kotisivuille!";
+    mainArea.appendChild(otsikko);
+
+    // Lisätään asiasisältöä
+    var sisalto = document.createElement("div");
+    sisalto.innerHTML = "<p>Meidän laajasta valikoimasta löydät kukat jokaiseen tilanteeseen.</p>";
+    mainArea.appendChild(sisalto);
+
+    if (theme === "dark") {
+        darkTheme()
+    }
+    else {
+        lightTheme()
+    }
+}
+
+//---------------------------------------  YRITYSESITTELY  ----------------------------------------------------//
 
 function yritysEsittely() {
-    document.getElementById("mainArea").innerHTML = "Yritysesittely.";
+    var mainArea = document.getElementById("mainArea");
+    mainArea.innerHTML = ""; // Tyhjennetään mainArea sisällöstä
+
+
+    // Lisätään otsikko
+    var otsikko = document.createElement("h1");
+    otsikko.textContent = "Tietoja yrityksestä";
+    mainArea.appendChild(otsikko);
+
+    // Lisätään asiasisältöä
+    var sisalto = document.createElement("div");
+    sisalto.innerHTML = "<p>Kukkamme tuoksuvat mahtavasti ja ovat ilo silmälle!</p>";
+    mainArea.appendChild(sisalto);
+
+    if (theme === "dark") {
+        darkTheme()
+    }
+    else {
+        lightTheme()
+    }
 }
+
+//---------------------------------------  YHTEYSTIEDOT  ----------------------------------------------------//
 
 function yhteysTiedot() {
-    document.getElementById("mainArea").innerHTML = "Yhteystiedot.";
+    var mainArea = document.getElementById("mainArea");
+    mainArea.innerHTML = ""; // Tyhjennetään mainArea sisällöstä
+
+
+    // Lisätään otsikko
+    var otsikko = document.createElement("h1");
+    otsikko.textContent = "Yhteystiedot";
+    mainArea.appendChild(otsikko);
+
+    // Lisätään asiasisältöä
+    var sisalto = document.createElement("div");
+    sisalto.innerHTML = "<p>Yrityksen sijainti ja yhteystiedot.</p>";
+    mainArea.appendChild(sisalto);
+
+    if (theme === "dark") {
+        darkTheme()
+    }
+    else {
+        lightTheme()
+    }
 }
 
-function henkiloKunta() {
-    document.getElementById("mainArea").innerHTML = "Henkilökunnan tiedot.";
 
+//---------------------------------------  HENKILÖKUNTA  ----------------------------------------------------//
+
+function henkiloKunta() {
+
+
+    var mainArea = document.getElementById("mainArea");
+    mainArea.innerHTML = ""; // Tyhjennetään mainArea sisällöstä
+
+    // Lisätään otsikko
+    var otsikko = document.createElement("h1");
+    otsikko.textContent = "Henkilökunnan tiedot";
+    mainArea.appendChild(otsikko);
+    
     async function fetchData() {
-        document.getElementById("mainArea").innerHTML = "<h4>Ladataan sivua...</h4>" //Lautausilmoitus
-        
         var x = `<table><thead><th>ID</th><th>Nimi</th><th>Osoite</th><th>Postinumero</th></thead><tbody>`
     
         try {
@@ -29,15 +122,17 @@ function henkiloKunta() {
         await henkilodata.map(h => { //Loopataan läpi oliot map funktiolla, h on 1 herkku
         x += `<tr><td>${h.ID}</td><td>${h.Nimi}</td><td>${h.Osoite}</td><td>${h.Postinumero}</td></tr>`
         })
-            
+    
         //taulukko päätetään ja renderöidään html elementtiin
         x += `</tbody></table>`
         document.getElementById("mainArea").innerHTML = x
-    
+
         //Virhetilanteen hallinta
         } catch (error) {
             console.error("Error fetching data:", error);
         }
+
     }
     fetchData();
 }
+
