@@ -108,7 +108,11 @@ function yhteysTiedot() {
         lightTheme()
     }
 
+    var kartta = document.createElement("div");
+    kartta.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1935.3121687144935!2d25.646224813502545!3d60.98341757743558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468e28543ab2a73b%3A0x4718e84ea2f93c13!2sPaasikivenkatu%202%2C%2015110%20Lahti!5e0!3m2!1sfi!2sfi!4v1709812526097!5m2!1sfi!2sfi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+    mainArea.appendChild(kartta);
 
+    
 }
 
 

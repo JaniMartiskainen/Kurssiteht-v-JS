@@ -21,9 +21,42 @@ table {
 
 }
 
-th {
-    text-align: left; /* Asettaa tekstin vasemmalle */
-}
+
+
+th, td {
+    text-align: left; 
+    padding: 16px;
+    }
+    th {
+    background-color: goldenrod;
+    border-radius: 5%;
+    }
+    tr:nth-child(even) { 
+    background-color: #f2f2f2
+    }
+    .fixed_header{ 
+    width: 100%;
+    table-layout: fixed; 
+    border-collapse: collapse;
+    }
+    .fixed_header tbody{ 
+    display:block; 
+    width: 100%; 
+    overflow: auto; 
+    height: 350px;
+    }
+    .fixed_header thead tr { 
+    display: block;
+    }
+    .fixed_header thead { 
+    background: black; 
+    color:#fff;
+    }
+    .fixed_header th, .fixed_header td { 
+    padding: 10px;
+    text-align: left; 
+    width: 200px;
+    }
 
 
 /* ---------------------------- MAINAREA/PÄÄIKKUNA --------------------------*/
