@@ -46,6 +46,12 @@ function etuSivu() {
     else {
         lightTheme()
     }
+
+    var kuva = document.createElement("img");
+    kuva.src = "kukat.jfif";
+    kuva.alt = "Kuva";
+    mainArea.appendChild(kuva);
+
 }
 
 //---------------------------------------  YRITYSESITTELY  ----------------------------------------------------//
@@ -71,6 +77,11 @@ function yritysEsittely() {
     else {
         lightTheme()
     }
+
+    var kuva = document.createElement("img");
+    kuva.src = "kukkakauppa.jfif";
+    kuva.alt = "Kuva";
+    mainArea.appendChild(kuva);
 }
 
 //---------------------------------------  YHTEYSTIEDOT  ----------------------------------------------------//
@@ -96,6 +107,8 @@ function yhteysTiedot() {
     else {
         lightTheme()
     }
+
+
 }
 
 
@@ -108,9 +121,9 @@ function henkiloKunta() {
     mainArea.innerHTML = ""; // Tyhjennetään mainArea sisällöstä
 
     // Lisätään otsikko
-    var otsikko = document.createElement("h1");
+    /*var otsikko = document.createElement("h1");
     otsikko.textContent = "Henkilökunnan tiedot";
-    mainArea.appendChild(otsikko);
+    mainArea.appendChild(otsikko);*/
     
     async function fetchData() {
         var x = `<table><thead><th>ID</th><th>Nimi</th><th>Osoite</th><th>Postinumero</th></thead><tbody>`
@@ -127,12 +140,32 @@ function henkiloKunta() {
         x += `</tbody></table>`
         document.getElementById("mainArea").innerHTML = x
 
+        // Lisätään otsikko
+        var otsikko = document.createElement("h1");
+        otsikko.textContent = "Henkilökunnan tiedot";
+        document.getElementById("mainArea").prepend(otsikko); // Lisätään otsikko ennen taulukkoa
+
+        if (theme === "dark") {
+            darkTheme()
+        }
+        else {
+            lightTheme()
+        }
+
+
         //Virhetilanteen hallinta
         } catch (error) {
             console.error("Error fetching data:", error);
         }
 
+        var kuva = document.createElement("img");
+        kuva.src = "floristit.jfif";
+        kuva.alt = "Kuva";
+        mainArea.appendChild(kuva);
+
     }
     fetchData();
+
+    
 }
 

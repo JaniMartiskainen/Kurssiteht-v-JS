@@ -1,3 +1,5 @@
+/* ---------------------------- BUTTONIT --------------------------*/
+
 button {
     background-color: white;
     font-family: "Georgia", serif, serif;
@@ -7,4 +9,33 @@ button {
 
 button:hover {
     background-color: mediumaquamarine; /* Muuta taustaväriä, kun hiiri on päällä */
+}
+
+
+/* ---------------------------- TAULUKKO --------------------------*/
+
+table {
+    width: 30%;
+    background-color: beige;
+    border-radius: 10px; /* Reunojen pyöristys */
+
+}
+
+th {
+    text-align: left; /* Asettaa tekstin vasemmalle */
+}
+
+
+/* ---------------------------- MAINAREA/PÄÄIKKUNA --------------------------*/
+
+#mainArea {
+    font-family: Arial, sans-serif; /* Fontti */
+    font-size: 120%; /* Fonttikoko */
+}
+
+#mainArea img {
+    width: 30%;
+    height: auto;
+    border-radius: 10px; /* Reunojen pyöristys */
+    margin-top: 1%;
 }
