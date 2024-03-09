@@ -7,12 +7,12 @@ const axios = require('axios'); // Lisää axios-kirjasto
 const app = express() //app-sanan takana on Express-kirjaston toimintoja
 const polku = path.join(__dirname, './public')  //Tehdään polkumääritys public kansioon
 
-const henkilot = require('./Henkilokunta.json')
+/*const henkilot = require('./Henkilokunta.json')*/
 
  //GET ALL etsitään kaikki henkilötiedot jsonista
  app.get('/api/henkilot', async (req, res) => {
     try {
-        const response = await axios.get('https://github.com/JaniMartiskainen/Kurssiteht-v-JS/blob/master/Henkilokunta.json');
+        const response = await axios.get('https://raw.githubusercontent.com/JaniMartiskainen/Kurssiteht-v-JS/master/Henkilokunta.json?token=GHSAT0AAAAAACPH3K35KZBACCT2B2SMPBLKZPMRK7Q');
         const data = response.data;
         res.json(data);
     } catch (error) {
