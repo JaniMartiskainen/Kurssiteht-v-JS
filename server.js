@@ -7,9 +7,16 @@ const app = express() //app-sanan takana on Express-kirjaston toimintoja
 const henkilot = require('./Henkilokunta.json')
 
  //GET ALL etsitään kaikki henkilötiedot jsonista
- app.get('/api/henkilot', (req, res) => {
-    res.json(henkilot)
- })
+ app.get('/api/henkilot', async (req, res) => {
+    try {
+        const response = await fetch('https://github.com/JaniMartiskainen/Kurssiteht-v-JS/blob/master/Henkilokunta.json');
+        const data = await response.json();
+        res.json(data);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).json({ error: 'Error fetching data' });
+    }
+})
 
 //Tehdään polkumääritys public kansioon
 const polku = path.join(__dirname, './public')

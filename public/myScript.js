@@ -133,7 +133,7 @@ function henkiloKunta() {
         var x = `<table><thead><th>ID</th><th>Nimi</th><th>Osoite</th><th>Postinumero</th></thead><tbody>`
     
         try {
-        const response = await fetch("http://localhost:3000/api/henkilot")
+        const response = await fetch("https://github.com/JaniMartiskainen/Kurssiteht-v-JS/blob/master/Henkilokunta.json")
         const henkilodata = await response.json() //muutetaan json => javascript muotoon
     
         await henkilodata.map(h => { //Loopataan läpi oliot map funktiolla, h on 1 herkku
