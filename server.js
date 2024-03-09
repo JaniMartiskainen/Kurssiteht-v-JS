@@ -12,7 +12,7 @@ const polku = path.join(__dirname, './public')  //Tehdään polkumääritys publ
  //GET ALL etsitään kaikki henkilötiedot jsonista
  app.get('/api/henkilot', async (req, res) => {
     try {
-        const response = await axios.get('https://raw.githubusercontent.com/JaniMartiskainen/Kurssiteht-v-JS/master/Henkilokunta.json?token=GHSAT0AAAAAACPH3K35KZBACCT2B2SMPBLKZPMRK7Q');
+        const response = await axios.get('https://raw.githubusercontent.com/JaniMartiskainen/Kurssiteht-v-JS/master/Henkilokunta.json?token=GHSAT0AAAAAACPH3K34AOJ2F36ID3PJDKYIZPMRUCQ');
         const data = response.data;
         res.json(data);
     } catch (error) {
